@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-RR3-1.0";
+const cacheName = "MTN-Bok Stars-1.0";
 const contentToCache = [
     "Build/Rugby2022.loader.js",
     "Build/Rugby2022.framework.js.unityweb",
