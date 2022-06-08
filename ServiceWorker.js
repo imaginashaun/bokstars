@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-RR3-1.0";
 const contentToCache = [
     "Build/Rugby2022.loader.js",
-    "Build/Rugby2022.framework.js.gz",
-    "Build/Rugby2022.data.gz",
-    "Build/Rugby2022.wasm.gz",
+    "Build/Rugby2022.framework.js.unityweb",
+    "Build/Rugby2022.data.unityweb",
+    "Build/Rugby2022.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
