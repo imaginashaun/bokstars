@@ -16,18 +16,19 @@
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" width=420 height=600></canvas>
-      <div id="unity-loading-bar">
+      <div id="unity-loading-bar" style="background-position: center; background-size: cover; width: 100%">
+
+
+          <div style="background: #fff; padding: 10px; position:absolute; bottom: 0px; width: 100%">
+
           <center>
-              <div id="unity-logo"></div>
+              <div style="color: black"> Loading...</div>
               <div id="unity-progress-bar-empty">
                   <div id="unity-progress-bar-full"></div>
               </div>
-              </center>
-              <br>
-              <hr>
-              <center><img id="mainPhoto" src="how/HowItWorks-01.jpg" style="width:80%; height:auto"></center>
+          </center>
+          </div>
 </div>
-      <div id="unity-warning"> </div>
     </div>
     
     <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh;">
@@ -41,8 +42,11 @@
         var index = 1;
 
         function change() {
-            document.getElementById("mainPhoto").src = "how/HowItWorks-0"+index+".jpg";
-            if (index == 4) {
+            console.log("CHANGE!");
+
+            document.getElementById("unity-loading-bar").style.backgroundImage = "url(./how/HowItWorks-0"+index+".jpg)";
+            console.log("CHANGE done!");
+            if (index === 4) {
                 index = 1;
             } else {
                 index++;
