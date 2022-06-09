@@ -1,9 +1,9 @@
 const cacheName = "MTN-Bok Stars-1.0";
 const contentToCache = [
     "Build/Rugby2022.loader.js",
-    "Build/Rugby2022.framework.js.br",
-    "Build/Rugby2022.data.br",
-    "Build/Rugby2022.wasm.br",
+    "Build/Rugby2022.framework.js.unityweb",
+    "Build/Rugby2022.data.unityweb",
+    "Build/Rugby2022.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
