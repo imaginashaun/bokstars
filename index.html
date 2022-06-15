@@ -195,7 +195,8 @@
               progressBG.setProperty('--pos', progressIs+"%");
 
 
-              if(progressIs >= 0){
+              if(progressIs <= 0){
+                gameIsReady = true;
                 clearInterval(intervalId)
               }
             }, 500);
@@ -223,10 +224,15 @@
 
 
       progressBT.onclick = function() {
-        // on play now button clicked event
+        if(gameIsReady){
+          // on play now button  event
 
-        howitworks.style.display = "none";
-        gameIsReady = true;
+          howitworks.style.display = "none";
+          gameIsReady = true;
+
+        }
+
+
       };
     </script>
   </body>
