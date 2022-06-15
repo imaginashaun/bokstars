@@ -184,16 +184,18 @@
           progressIs = ((100 * progress)/2)-100;
           progressBG.setProperty('--pos', progressIs+"%");
 
-          if(progressIs >= 50){
+          if(progressIs <= -50){
 
 
             var intervalId = window.setInterval(function(){
               /// call your function here
 
+              console.log("RUN POS!")
               progressIs++;
               progressBG.setProperty('--pos', progressIs+"%");
 
-              if(progressIs >= 100){
+
+              if(progressIs >= 0){
                 clearInterval(intervalId)
               }
             }, 500);
