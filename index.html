@@ -189,8 +189,13 @@
         });
       };
       document.body.appendChild(script);
+
+
+
     </script>
     <script>
+      var howitworks = document.querySelector("#howitworks");
+      var progressBT = document.querySelector("#play-inside-button");
       var playNowButtonElement = document.querySelector('#play-now-button');
       playNowButtonElement.onclick = function() {
         // on play now button clicked event
@@ -198,7 +203,7 @@
       };
 
 
-      progressBG.onclick = function() {
+      progressBT.onclick = function() {
         // on play now button clicked event
 
         howitworks.style.display = "none";
