@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Bok Stars</title>
+
     <style type="text/css">
       @font-face {
         font-family: myFirstFont;
@@ -12,7 +13,7 @@
       * {
         font-family: myFirstFont !important;
       }
-      </style>
+    </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -73,8 +74,7 @@
         </div>
 
         <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-          <span id="playtext" style="opacity: .3">  Play</span>
-
+          Play
 
         </button>
 
@@ -194,7 +194,7 @@
           progressIs = ((100 * progress)/2)-100;
           progressBG.setProperty('--pos', progressIs+"%");
 
-          if(progressIs >= -50){
+          if(progressIs <= -50){
 
 
             var intervalId = window.setInterval(function(){
