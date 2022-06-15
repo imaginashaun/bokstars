@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Bok Stars</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.slider').bxSlider();
+      });
+    </script>
+
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -12,11 +23,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" width=420 height=600></canvas>
-      <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
+     <!-- <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
         <div id="logo_holder" style="background: rgba(255,255,255,0.66); padding: 0px 0px 20px 0px; position:absolute; bottom:20px; width: 100%">
 
 
@@ -30,22 +42,37 @@
             </div>
           </center>
         </div>
+      </div>-->
+
+      <div class="slider">
+        <div>I am a slide.</div>
+        <div>I am another slide.</div>
       </div>
 
 
-
+<!--
       <div id="unity-loading-bar" style="background-position: top; background-size: cover; width: 100%">
 
 
 
-      </div>
-      <div id="unity-warning"> </div>
+      </div>-->
+<!--      <div id="unity-warning"> </div>-->
     </div>
     
-    <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh;">
-      <button id="play-now-button" class="play-now-button">Play Now</button>
-      <img src="assets/bok-stars-landing.gif" style="height: 100vh; width: auto;">
+    <div  id="page-container" class="page-container" style="display:none; position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: #fff">
 
+      <img class="bokstars_image" src="assets/boksquad_2.png">
+
+
+      <h1 class="header_text">
+
+        GET IN THE GAME AND WIN DATA DAILY
+      </h1>
+
+      <button id="play-now-button" class="play-now-button">Play Now</button>
+
+
+        <img class="lockup_image" src="assets/lockup.png">
     </div>
     
     <script>
