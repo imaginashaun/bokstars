@@ -63,7 +63,7 @@
         </div>
 
         <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-          <span id="playtext" style="opacity: .3">  Play</span>
+          Play
 
         </button>
 
@@ -119,7 +119,6 @@
       var gameIsReady = false;
       var doNotCheckAgain = false;
       var progressIs = -100;
-
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -203,7 +202,7 @@
                 progressBG.setProperty('--pos', progressIs+"%");
 
               }
-            }, 500);
+            }, 200);
           }
         }).then((unityInstance) => {
           //    loadingBar.style.display = "none";
@@ -213,9 +212,6 @@
         });
       };
       document.body.appendChild(script);
-
-
-
     </script>
     <script>
       var howitworks = document.querySelector("#howitworks");
@@ -234,7 +230,7 @@
           howitworks.style.display = "none";
           gameIsReady = true;
         }else{
-        //  alert('ok');
+          //  alert('ok');
           progressBT.parentElement.classList.remove("shakeit");
           progressBT.parentElement.classList.add("shakeit");
 
