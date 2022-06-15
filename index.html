@@ -48,7 +48,7 @@
            </center>
          </div>
        </div>-->
-      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%">
+      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%; background: #fff">
         <h1 class="header_text">
           HOW IT WORKS
         </h1>
@@ -118,6 +118,7 @@
       var warningBanner = document.querySelector("#unity-warning");
       var gameIsReady = false;
       var doNotCheckAgain = false;
+      var progressIs = -100;
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -180,7 +181,23 @@
           //  progressBarFull.style.width = 100 * progress + "%";
 
 
-          progressBG.setProperty('--pos', ((100 * progress)/2)-100+"%");
+          progressIs = ((100 * progress)/2)-100;
+          progressBG.setProperty('--pos', progressIs+"%");
+
+          if(progressIs >= 50){
+
+
+            var intervalId = window.setInterval(function(){
+              /// call your function here
+
+              progressIs++;
+              progressBG.setProperty('--pos', progressIs+"%");
+
+              if(progressIs >= 100){
+                clearInterval(intervalId)
+              }
+            }, 500);
+          }
         }).then((unityInstance) => {
           //    loadingBar.style.display = "none";
         //  howitworks.style.display = "none";
