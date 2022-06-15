@@ -11,7 +11,12 @@
 
     <script>
       $(document).ready(function(){
-        $('.slider').bxSlider();
+        $('.slider').bxSlider(
+                { slideMargin:0,
+                  auto: true,
+                    controls:false
+                }
+        );
       });
     </script>
 
@@ -43,13 +48,29 @@
           </center>
         </div>
       </div>-->
-
+      <div style="height: 100vh; position: absolute; top: 0px; width: 100%">
+        <h1 class="header_text">
+          HOW IT WORKS
+        </h1>
+<div style="padding: 10px; margin: 20px; border: 2px solid #FFCB05; border-radius: 20px;">
       <div class="slider">
-        <div>I am a slide.</div>
-        <div>I am another slide.</div>
+        <div><img src="./how/HowItWorks-01.jpg" width="100%"></div>
+        <div><img src="./how/HowItWorks-02.jpg" width="100%"></div>
+        <div><img src="./how/HowItWorks-03.jpg" width="100%"></div>
+        <div><img src="./how/HowItWorks-04.jpg" width="100%"></div>
+        <div><img src="./how/HowItWorks-05.jpg" width="100%"></div>
+      </div>
+</div>
+
+      <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
+            Play Now
+
+        </button>
+
       </div>
 
 
+        <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
 <!--
       <div id="unity-loading-bar" style="background-position: top; background-size: cover; width: 100%">
 
@@ -58,7 +79,8 @@
       </div>-->
 <!--      <div id="unity-warning"> </div>-->
     </div>
-    
+      </div>
+    </div>
     <div  id="page-container" class="page-container" style="display:none; position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: #fff">
 
       <img class="bokstars_image" src="assets/boksquad_2.png">
@@ -105,7 +127,8 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var logo_holder = document.querySelector("#logo_holder");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+//      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var progressBG = document.querySelector("#play-inside-button").style;
       var warningBanner = document.querySelector("#unity-warning");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
@@ -166,7 +189,10 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
+        //  progressBarFull.style.width = 100 * progress + "%";
+
+
+            progressBG.setProperty('--pos', ((100 * progress)/2)+"%");
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           logo_holder.style.display = "none";
