@@ -63,7 +63,7 @@
         </div>
 
         <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-          Play
+          <span id="playtext" style="opacity: .3">  Play</span>
 
         </button>
 
@@ -190,14 +190,18 @@
             var intervalId = window.setInterval(function(){
               /// call your function here
 
-              console.log("RUN POS!")
-              progressIs++;
-              progressBG.setProperty('--pos', progressIs+"%");
 
 
-              if(progressIs <= 0){
-                gameIsReady = true;
+
+              if(progressIs === 0){
+              //  gameIsReady = true;
+                document.querySelector('#playtext').style.opacity = "1.0";
                 clearInterval(intervalId)
+              }else{
+                console.log("RUN POS!")
+                progressIs++;
+                progressBG.setProperty('--pos', progressIs+"%");
+
               }
             }, 500);
           }
@@ -229,10 +233,16 @@
 
           howitworks.style.display = "none";
           gameIsReady = true;
+        }else{
+        //  alert('ok');
+          progressBT.parentElement.classList.remove("shakeit");
+          progressBT.parentElement.classList.add("shakeit");
+
+          setTimeout(function(){
+            progressBT.parentElement.classList.remove("shakeit");
+          }, 1000);
 
         }
-
-
       };
     </script>
   </body>
