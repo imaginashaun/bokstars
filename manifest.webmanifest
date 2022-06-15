@@ -1,11 +1,11 @@
 {
-    "name": "Bok Stars",
-    "short_name": "Bok Stars",
+    "name": "BokStars",
+    "short_name": "BokStars",
     "start_url": "index.html",
     "display": "fullscreen",
     "background_color": "#231F20",
     "theme_color": "#000",
-    "description": "Boks",
+    "description": "BokStars",
     "icons": [{
       "src": "TemplateData/icons/unity-logo-dark.png",
       "sizes": "144x144",

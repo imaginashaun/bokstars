@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Bok Stars</title>
+    <title>BokStars</title>
 
     <style type="text/css">
       @font-face {
@@ -162,7 +162,7 @@
         codeUrl: buildUrl + "/Rugby2022.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MTN",
-        productName: "Bok Stars",
+        productName: "BokStars",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -194,15 +194,12 @@
           progressIs = ((100 * progress)/2)-100;
           progressBG.setProperty('--pos', progressIs+"%");
 
-          console.log(progressIs);
-          if(progressIs >= -50){
+          if(progressIs <= -50){
 
-            console.log("PROG: "+progressIs);
 
             var intervalId = window.setInterval(function(){
               /// call your function here
 
-              console.log("Interval runner POS!")
 
 
 
