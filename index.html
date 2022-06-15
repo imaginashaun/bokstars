@@ -183,7 +183,7 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
-      loadingBar.style.display = "block";
+    //  loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -194,7 +194,7 @@
 
             progressBG.setProperty('--pos', ((100 * progress)/2)+"%");
         }).then((unityInstance) => {
-          loadingBar.style.display = "none";
+      //    loadingBar.style.display = "none";
           logo_holder.style.display = "none";
         }).catch((message) => {
           alert(message);
