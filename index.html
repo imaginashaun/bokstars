@@ -59,22 +59,22 @@
            </center>
          </div>
        </div>-->
-      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%; background: #fff">
+      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%; background: url('./assets/Play-Background.png'); background-size: cover">
         <h1 class="header_text">
           HOW IT WORKS
         </h1>
         <div style="padding: 10px; margin: 20px; border: 2px solid #FFCB05; border-radius: 20px;">
           <div class="slider">
-            <div><img src="./how/HowItWorks-01.jpg" width="100%"></div>
-            <div><img src="./how/HowItWorks-02.jpg" width="100%"></div>
-            <div><img src="./how/HowItWorks-03.jpg" width="100%"></div>
-            <div><img src="./how/HowItWorks-04.jpg" width="100%"></div>
-            <div><img src="./how/HowItWorks-05.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-1.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-2.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-3.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-4.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-5.jpg" width="100%"></div>
           </div>
         </div>
 
         <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-          Play
+          <span id="playtext">Play</span>
 
         </button>
 
@@ -95,9 +95,9 @@
       <div id="unity-warning"> </div>
     </div>
 
-    <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: #fff">
+    <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: url('./assets/Play-Background.png'); background-size: cover">
 
-      <img class="bokstars_image" src="assets/boksquad_2.png">
+      <img class="bokstars_image" src="assets/bokstars-icon.png" >
 
 
       <h1 class="header_text">
@@ -194,7 +194,7 @@
           progressIs = ((100 * progress)/2)-100;
           progressBG.setProperty('--pos', progressIs+"%");
 
-          if(progressIs >= -50){
+          if(progressIs <= -50){
 
 
             var intervalId = window.setInterval(function(){
