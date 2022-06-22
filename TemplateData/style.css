@@ -9,3 +9,10 @@ body { padding: 0; margin: 0 }
 #playtext {
     opacity: .4;
 }
+.lockup_image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 80px;
+    width: auto;
+}

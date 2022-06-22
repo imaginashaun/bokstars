@@ -7,11 +7,11 @@
 
     <style type="text/css">
       @font-face {
-        font-family: myFirstFont;
+        font-family: MTNFont;
         src: url(assets/MTNBrighterSans-Bold.woff);
       }
       * {
-        font-family: myFirstFont !important;
+        font-family: MTNFont !important;
       }
     </style>
 
@@ -38,7 +38,6 @@
         <link href="core.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="unity-container">
@@ -74,7 +73,7 @@
         </div>
 
         <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-          <span id="playtext">Play</span>
+          <span id="playtext">Loading...</span>
 
         </button>
 
@@ -206,6 +205,7 @@
               if(progressIs === 0){
                 gameIsReady = true;
                 document.querySelector('#playtext').style.opacity = "1.0";
+                document.querySelector('#playtext').innerHTML = "Play";
                 clearInterval(intervalId)
               }else{
                 console.log("RUN POS!")

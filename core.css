@@ -13,7 +13,7 @@ html, body, iframe {
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    font-family: 'Kanit', sans-serif !important;
+    font-family: MTNFont !important;
     color: #000;
 }
 
@@ -44,7 +44,7 @@ html, body, iframe {
     font-size: 1.7rem;
     left: 50%;
     transform: translate(-50%, 0);
-    font-family: 'Kanit', sans-serif !important;
+    font-family: MTNFont !important;
     font-weight: 500;
 }
 
@@ -74,7 +74,7 @@ html, body, iframe {
 }
 
 
-
+/*
 .lockup_image {
     position: relative;
     left: 50%;
@@ -82,7 +82,7 @@ html, body, iframe {
     bottom: 0vh;
     transform: translate(-50%, 0);
 }
-
+*/
 .bokstars_image {
     position: relative;
     left: 50%;
