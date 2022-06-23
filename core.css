@@ -86,7 +86,7 @@ html, body, iframe {
 .bokstars_image {
     position: relative;
     left: 50%;
-    width: 40%;
+    width: 80%;
     bottom: 2vh;
 
     transform: translate(-50%, 0);
