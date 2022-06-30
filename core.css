@@ -13,7 +13,7 @@ html, body, iframe {
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    font-family: 'Kanit', sans-serif !important;
+    font-family: MTNFont !important;
     color: #000;
 }
 
@@ -33,7 +33,7 @@ html, body, iframe {
 
 .play-now-button {
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 40px;
     border: solid 1px #000000;
     color: #000000;
     background-color: #FFCB05;
@@ -44,7 +44,7 @@ html, body, iframe {
     font-size: 1.7rem;
     left: 50%;
     transform: translate(-50%, 0);
-    font-family: 'Kanit', sans-serif !important;
+    font-family: MTNFont !important;
     font-weight: 500;
 }
 
@@ -57,7 +57,7 @@ html, body, iframe {
     height: 100%;
     width: 100%;
     background-color: #FFCB05;
-    border-radius: 6px;
+    border-radius: 40px;
     z-index: -1;
 }
 
@@ -74,7 +74,7 @@ html, body, iframe {
 }
 
 
-
+/*
 .lockup_image {
     position: relative;
     left: 50%;
@@ -82,11 +82,11 @@ html, body, iframe {
     bottom: 0vh;
     transform: translate(-50%, 0);
 }
-
+*/
 .bokstars_image {
     position: relative;
     left: 50%;
-    width: 60%;
+    width: 80%;
     bottom: 2vh;
 
     transform: translate(-50%, 0);
@@ -119,4 +119,26 @@ html, body, iframe {
 .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
 
     background: #FFCB05;
+}
+
+.shakeit {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

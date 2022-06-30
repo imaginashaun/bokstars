@@ -6,3 +6,13 @@ body { padding: 0; margin: 0 }
 #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-light.png') no-repeat center }
 #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 0px; background: url('progress-bar-full-light.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+#playtext {
+    opacity: .4;
+}
+.lockup_image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: auto;
+    width: 80%;
+}

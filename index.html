@@ -3,7 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Bok Stars</title>
+    <title>BokStars</title>
+
+
+    <style type="text/css">
+      @font-face {
+        font-family: MTNFont;
+        src: url(assets/MTNBrighterSans-Bold.woff);
+      }
+      * {
+        font-family: MTNFont !important;
+      }
+    </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -14,7 +25,8 @@
         $('.slider').bxSlider(
                 { slideMargin:0,
                   auto: true,
-                    controls:false
+                  controls:false,
+                  pause:2000
                 }
         );
       });
@@ -27,95 +39,72 @@
         <link href="core.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-
   </head>
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" width=420 height=600></canvas>
-     <!-- <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
-        <div id="logo_holder" style="background: rgba(255,255,255,0.66); padding: 0px 0px 20px 0px; position:absolute; bottom:20px; width: 100%">
+
+      <!-- <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
+         <div id="logo_holder" style="background: rgba(255,255,255,0.66); padding: 0px 0px 20px 0px; position:absolute; bottom:20px; width: 100%">
 
 
 
-          <center>
-            <img src="TemplateData/unity-logo-light.png" width="150">
+           <center>
+             <img src="TemplateData/unity-logo-light.png" width="150">
 
-            <div style="color: black"> <h2 style="padding: 0px; margin: 0px">Loading...</h2></div>
-            <div id="unity-progress-bar-empty" style=" ">
-              <div id="unity-progress-bar-full"></div>
-            </div>
-          </center>
-        </div>
-      </div>-->
-      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%">
-        <h1 class="header_text">
+             <div style="color: black"> <h2 style="padding: 0px; margin: 0px">Loading...</h2></div>
+             <div id="unity-progress-bar-empty" style=" ">
+               <div id="unity-progress-bar-full"></div>
+             </div>
+           </center>
+         </div>
+       </div>-->
+      <div id="howitworks" style="height: 100vh; position: absolute; top: 0px; width: 100%;  background: url('./assets/Play-Background.png'); background-size: cover">
+        <h1 class="header_text" style="color: #fff">
           HOW IT WORKS
         </h1>
-<div style="padding: 10px; margin: 20px; border: 2px solid #FFCB05; border-radius: 20px;">
-      <div class="slider">
-        <div><img src="./how/HowItWorks-01.jpg" width="100%"></div>
-        <div><img src="./how/HowItWorks-02.jpg" width="100%"></div>
-        <div><img src="./how/HowItWorks-03.jpg" width="100%"></div>
-        <div><img src="./how/HowItWorks-04.jpg" width="100%"></div>
-        <div><img src="./how/HowItWorks-05.jpg" width="100%"></div>
-      </div>
-</div>
+        <div style="padding: 10px; margin: 20px; border: 2px solid #FFCB05; border-radius: 20px;">
+          <div class="slider">
+            <div><img src="./how/Howitworks-1.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-2.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-3.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-4.jpg" width="100%"></div>
+            <div><img src="./how/Howitworks-5.jpg" width="100%"></div>
+          </div>
+        </div>
 
-      <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
-            Play Now
+        <div class="play-now-buttonbg">  <button id="play-inside-button" class="play-now-button nudge">
+          <span id="playtext">Loading...</span>
 
         </button>
 
-      </div>
+        </div>
 
 
         <div style="height: 40vh; position: absolute; top: 0px; width: 100%">
-<!--
-      <div id="unity-loading-bar" style="background-position: top; background-size: cover; width: 100%">
+          <!--
+                <div id="unity-loading-bar" style="background-position: top; background-size: cover; width: 100%">
 
 
 
-      </div>-->
-<!--      <div id="unity-warning"> </div>-->
-    </div>
+                </div>-->
+          <!--      <div id="unity-warning"> </div>-->
+        </div>
       </div>
+
+      <div id="unity-warning"> </div>
     </div>
-    <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: #fff">
 
-      <img class="bokstars_image" src="assets/boksquad_2.png">
-
-
+    <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: url('./assets/Play-Background.png'); background-size: cover">
+      <img class="bokstars_image" src="assets/lockup.png">
       <h1 class="header_text">
-
         GET IN THE GAME AND WIN DATA DAILY
       </h1>
-
       <button id="play-now-button" class="play-now-button">Play Now</button>
-
-
-        <img class="lockup_image" src="assets/lockup.png">
     </div>
-    
+
     <script>
 
-      var index = 1;
-
-      function change() {
-        console.log("CHANGE!");
-
-     //   document.getElementById("unity-loading-bar").style.backgroundImage = "url(./how/HowItWorks-0"+index+".jpg)";
-        console.log("CHANGE done!");
-        if (index === 4) {
-          index = 1;
-        } else {
-          index++;
-        }
-
-        setTimeout(change, 3000);
-      }
-
-      window.onload = change();
 
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
@@ -127,10 +116,12 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var howitworks = document.querySelector("#howitworks");
-//      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      //      var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var progressBG = document.querySelector("#play-inside-button").style;
       var warningBanner = document.querySelector("#unity-warning");
-
+      var gameIsReady = false;
+      var doNotCheckAgain = false;
+      var progressIs = -100;
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -163,7 +154,7 @@
         codeUrl: buildUrl + "/Rugby2022.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MTN",
-        productName: "Bok Stars",
+        productName: "BokStars",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -183,19 +174,43 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
-    //  loadingBar.style.display = "block";
+     // loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-        //  progressBarFull.style.width = 100 * progress + "%";
+          //  progressBarFull.style.width = 100 * progress + "%";
 
 
-            progressBG.setProperty('--pos', ((100 * progress)/2)-100+"%");
+          progressIs = ((100 * progress)/2)-100;
+          progressBG.setProperty('--pos', progressIs+"%");
+
+          if(progressIs === -50){
+
+
+            var intervalId = window.setInterval(function(){
+              /// call your function here
+
+
+
+
+              if(progressIs === 0){
+                gameIsReady = true;
+                document.querySelector('#playtext').style.opacity = "1.0";
+                document.querySelector('#playtext').innerHTML = "Play";
+                clearInterval(intervalId)
+              }else{
+                console.log("RUN POS!")
+                progressIs++;
+                progressBG.setProperty('--pos', progressIs+"%");
+
+              }
+            }, 200);
+          }
         }).then((unityInstance) => {
-      //    loadingBar.style.display = "none";
-            howitworks.style.display = "none";
+          //    loadingBar.style.display = "none";
+        //  howitworks.style.display = "none";
         }).catch((message) => {
           alert(message);
         });
@@ -203,10 +218,31 @@
       document.body.appendChild(script);
     </script>
     <script>
+      var howitworks = document.querySelector("#howitworks");
+      var progressBT = document.querySelector("#play-inside-button");
       var playNowButtonElement = document.querySelector('#play-now-button');
       playNowButtonElement.onclick = function() {
         // on play now button clicked event
         document.getElementById("page-container").style.display = 'none';
+      };
+
+
+      progressBT.onclick = function() {
+        if(gameIsReady){
+          // on play now button  event
+
+          howitworks.style.display = "none";
+          gameIsReady = true;
+        }else{
+          //  alert('ok');
+          progressBT.parentElement.classList.remove("shakeit");
+          progressBT.parentElement.classList.add("shakeit");
+
+          setTimeout(function(){
+            progressBT.parentElement.classList.remove("shakeit");
+          }, 1000);
+
+        }
       };
     </script>
   </body>
