@@ -6,6 +6,10 @@
     "background_color": "#231F20",
     "theme_color": "#000",
     "description": "BokStars",
-    "icons":[{"src":"assets/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"assets/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}]
-
+    "icons": [{
+      "src": "TemplateData/icons/unity-logo-dark.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }]
   }
