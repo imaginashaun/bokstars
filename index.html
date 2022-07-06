@@ -176,6 +176,31 @@
 
      // loadingBar.style.display = "block";
 
+      function doUnityProgress(progress){
+
+        progress = 50+(progress/2);
+        console.log("DO PROGRESS "+ progress);
+
+        progressIs = ((progress)-100).toFixed(0);
+
+        console.log("DO PROGRESS IS "+ progressIs);
+
+        progressBG.setProperty('--pos', progressIs+"%");
+
+        if(progressIs === 0 || progressIs === "-0"){
+          gameIsReady = true;
+          document.querySelector('#playtext').style.opacity = "1.0";
+          document.querySelector('#playtext').innerHTML = "Play";
+          //clearInterval(intervalId)
+        }else{
+          console.log("RUN POS!")
+          //   progressIs++;
+          progressBG.setProperty('--pos', progressIs+"%");
+
+        }
+
+      }
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -184,30 +209,9 @@
 
 
           progressIs = ((100 * progress)/2)-100;
+
           progressBG.setProperty('--pos', progressIs+"%");
-
-          if(progressIs === -50){
-
-
-            var intervalId = window.setInterval(function(){
-              /// call your function here
-
-
-
-
-              if(progressIs === 0){
-                gameIsReady = true;
-                document.querySelector('#playtext').style.opacity = "1.0";
-                document.querySelector('#playtext').innerHTML = "Play";
-                clearInterval(intervalId)
-              }else{
-                console.log("RUN POS!")
-                progressIs++;
-                progressBG.setProperty('--pos', progressIs+"%");
-
-              }
-            }, 200);
-          }
+          
         }).then((unityInstance) => {
           //    loadingBar.style.display = "none";
         //  howitworks.style.display = "none";
