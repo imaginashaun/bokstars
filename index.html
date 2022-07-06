@@ -187,7 +187,7 @@
 
         progressBG.setProperty('--pos', progressIs+"%");
 
-        if(progressIs === 0 || progressIs === "-0" || progressIs === -0 || progressIs < 0.1){
+        if(progressIs === 0 || progressIs === "-0" || progressIs === -0 || progressIs > -0.1){
           gameIsReady = true;
           document.querySelector('#playtext').style.opacity = "1.0";
           document.querySelector('#playtext').innerHTML = "Play";
