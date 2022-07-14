@@ -40,7 +40,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body>
+  <body id="gamebody">
     <div id="unity-container">
       <canvas id="unity-canvas" width=420 height=600></canvas>
 
@@ -95,8 +95,10 @@
       <div id="unity-warning"> </div>
     </div>
 
+
     <div  id="page-container" class="page-container" style="position: absolute; top:0px;left: 0px; width: 100%; height: 100vh; background: url('./assets/Play-Background.png'); background-size: cover">
-      <img class="bokstars_image" src="assets/lockup.png">
+      <div style="background: #fff; position: absolute; top:0px; width: 100%"><center><img style="height: 80px" src="assets/lockup.png"></center></div>
+     <!-- <img class="bokstars_image" src="assets/lockup.png">-->
       <h1 class="header_text">
         GET IN THE GAME AND WIN DATA DAILY
       </h1>
@@ -172,52 +174,99 @@
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-      }
 
-     // loadingBar.style.display = "block";
 
-      function doUnityProgress(progress){
 
-        progress = 50+(progress/2);
-        console.log("DO PROGRESS "+ progress);
+        //editable variables
+        var isLive = true;
+        var environmentVariable = isLive?"https://www.mzansigaming.com":"http://stage.mzansigaming.com";
+        var checkUserStatus = isLive?"https://c5ir2jqn75.execute-api.eu-west-2.amazonaws.com/mzansi-api/checkUser?unique_id=":"http://stage.mzansigaming.com/check-user-status/";
+        var scorePostAddress = isLive?"https://c5ir2jqn75.execute-api.eu-west-2.amazonaws.com/mzansi-api/submitScore":"http://stage.mzansigaming.com/store-score";
+        //end of editable variables
 
-        progressIs = ((progress)-100).toFixed(0);
 
-        console.log("DO PROGRESS IS "+ progressIs);
+        // loadingBar.style.display = "block";
 
-        progressBG.setProperty('--pos', progressIs+"%");
+        function doUnityProgress(progress){
 
-        if(progressIs === 0 || progressIs === "-0" || progressIs === -0 || progressIs > -0.1){
-          gameIsReady = true;
-          document.querySelector('#playtext').style.opacity = "1.0";
-          document.querySelector('#playtext').innerHTML = "Play";
-          //clearInterval(intervalId)
-        }else{
-          console.log("RUN POS!")
-          //   progressIs++;
+          progress = 50+(progress/2);
+          console.log("DO PROGRESS "+ progress);
+
+          progressIs = ((progress)-100).toFixed(0);
+
+          console.log("DO PROGRESS IS "+ progressIs);
+
           progressBG.setProperty('--pos', progressIs+"%");
+
+          if(progressIs === 0 || progressIs === "-0" || progressIs === -0 || progressIs > -0.1){
+            gameIsReady = true;
+            document.querySelector('#playtext').style.opacity = "1.0";
+            document.querySelector('#playtext').innerHTML = "Play";
+            //clearInterval(intervalId)
+          }else{
+            console.log("RUN POS!")
+            //   progressIs++;
+            progressBG.setProperty('--pos', progressIs+"%");
+          }
         }
+
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+            //  progressBarFull.style.width = 100 * progress + "%";
+
+
+            progressIs = ((100 * progress)/2)-100;
+
+            progressBG.setProperty('--pos', progressIs+"%");
+
+          }).then((unityInstance) => {
+            //    loadingBar.style.display = "none";
+            //  howitworks.style.display = "none";
+          }).catch((message) => {
+            alert(message);
+          });
+        };
+        document.body.appendChild(script);
+
+      }else{
+
+
+        document.getElementById('gamebody').innerHTML = "";
+        document.getElementById('gamebody').innerHTML = "        <div class=\"wrapper\">\n" +
+                "          <div class=\"desktop-section\">\n" +
+                "            <div class=\"desktop-section-inside\">\n" +
+                "              <img src=\"https://www.mzansigaming.com/front/images/desktop-not-available.svg\" alt=\"\">\n" +
+                "              <p>We are currently available only on mobile devices</p>\n" +
+                "            </div>\n" +
+                "          </div>           \n" +
+                "        </div>\n" +
+                "   <style>\n" +
+                "          body {\n" +
+                "            margin:0;\n" +
+                "            padding:0;            \n" +
+                "          }\n" +
+                "          .desktop-section {\n" +
+                "            display:flex;\n" +
+                "            align-items: center;\n" +
+                "            justify-content: center;\n" +
+                "            min-height:100vh;\n" +
+                "            text-align:center;\n" +
+                "          }\n" +
+                "          p {\n" +
+                "            font-size: 34px;\n" +
+                "            color: #7863E2;\n" +
+                "            font-weight: 600;\n" +
+                "            text-align: center;\n" +
+                "            font-family: 'Poppins', sans-serif;\n" +
+                "          }\n" +
+                "        </style> \n";
+
       }
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          //  progressBarFull.style.width = 100 * progress + "%";
 
 
-          progressIs = ((100 * progress)/2)-100;
-
-          progressBG.setProperty('--pos', progressIs+"%");
-
-        }).then((unityInstance) => {
-          //    loadingBar.style.display = "none";
-        //  howitworks.style.display = "none";
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
     </script>
     <script>
       var howitworks = document.querySelector("#howitworks");
